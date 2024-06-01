@@ -22,3 +22,8 @@ def print_todos():
         item = item.title()
         row = f"{index + 1}. {item}"
         print(row)
+
+
+if __name__ == "__main__":
+    print("Hello")
+    print(get_todos())
