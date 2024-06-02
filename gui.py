@@ -10,12 +10,11 @@ list_box = slim_shady.Listbox(values=functions.get_todos("userdatafiles/todos.tx
                               enable_events=True,
                               size=[45, 5])
 edit_button = slim_shady.Button("Edit")
-window = slim_shady.Window("To-DoWave", layout=[[label], [input_box, add_button], [list_box, edit_button]],
+layout = [[label], [input_box, add_button], [list_box, edit_button]]
+window = slim_shady.Window("To-DoWave", layout=layout,
                            font=("Helvetica", 18))
 while True:
     event, values = window.read()
-    print(event)
-    print(values)
     match event:
         case "Add":
             todos = functions.get_todos("userdatafiles/todos.txt")
@@ -37,6 +36,6 @@ while True:
         case "to-dos":
             window["to-do"].update(value=values['to-dos'][0])
         case slim_shady.WIN_CLOSED:
-            break
+            exit()
 
 window.close()
