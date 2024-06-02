@@ -1,17 +1,17 @@
 import functions
 
-import FreeSimpleGUI as slimshady
+import FreeSimpleGUI as slim_shady
 
-label = slimshady.Text("Type to add, show, edit, tick off or exit: ")
-input_box = slimshady.InputText(tooltip="Enter a to-do: ", key="to-do")
-add_button = slimshady.Button("Add")
-list_box = slimshady.Listbox(values=functions.get_todos("userdatafiles/todos.txt"),
-                             key="to-dos",
-                             enable_events=True,
-                             size=[45, 5])
-edit_button = slimshady.Button("Edit")
-window = slimshady.Window("To-DoWave", layout=[[label], [input_box, add_button], [list_box, edit_button]],
-                          font=("Helvetica", 18))
+label = slim_shady.Text("Type to add, show, edit, tick off or exit: ")
+input_box = slim_shady.InputText(tooltip="Enter a to-do: ", key="to-do")
+add_button = slim_shady.Button("Add")
+list_box = slim_shady.Listbox(values=functions.get_todos("userdatafiles/todos.txt"),
+                              key="to-dos",
+                              enable_events=True,
+                              size=[45, 5])
+edit_button = slim_shady.Button("Edit")
+window = slim_shady.Window("To-DoWave", layout=[[label], [input_box, add_button], [list_box, edit_button]],
+                           font=("Helvetica", 18))
 while True:
     event, values = window.read()
     print(event)
@@ -36,7 +36,7 @@ while True:
             window['to-dos'].update(values=todos)
         case "to-dos":
             window["to-do"].update(value=values['to-dos'][0])
-        case slimshady.WIN_CLOSED:
+        case slim_shady.WIN_CLOSED:
             break
 
 window.close()
