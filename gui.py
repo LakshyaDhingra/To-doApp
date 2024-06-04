@@ -8,14 +8,16 @@ slim_shady.theme("Black")
 
 clock = slim_shady.Text(key="clock")
 label = slim_shady.Text("Type to add, show, edit, tick off or exit: ")
-input_box = slim_shady.InputText(tooltip="Enter a to-do: ", key="to-do")
-add_button = slim_shady.Button("Add", size=10)
+input_box = slim_shady.InputText(tooltip="Enter a to-do", key="to-do")
+add_button = slim_shady.Button(size=10, image_source="add.png", mouseover_colors="LightBlue2", tooltip="Add to-do",
+                               key="Add")
 list_box = slim_shady.Listbox(values=functions.get_todos("userdatafiles/todos.txt"),
                               key="to-dos",
                               enable_events=True,
                               size=[45, 5])
 edit_button = slim_shady.Button("Edit", size=10)
-complete_button = slim_shady.Button("Complete", size=10)
+complete_button = slim_shady.Button(size=2, image_source="complete.png",  mouseover_colors="LightBlue2",
+                                    key="Complete")
 exit_button = slim_shady.Button("Exit", size=10)
 
 layout = [[clock], [label], [input_box, add_button], [list_box, edit_button, complete_button], [exit_button]]
@@ -23,7 +25,7 @@ layout = [[clock], [label], [input_box, add_button], [list_box, edit_button, com
 window = slim_shady.Window("To-DoWave", layout=layout,
                            font=("Helvetica", 18))
 while True:
-    event, values = window.read(timeout=20)
+    event, values = window.read(timeout=10)
     window["clock"].update(value=time.strftime("%b %d, %Y %H:%M:%S"))
     match event:
         case "Add":
