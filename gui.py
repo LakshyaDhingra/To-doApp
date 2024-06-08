@@ -40,7 +40,7 @@ while True:
     match event:
 
         case slim_shady.WIN_CLOSED:
-            break
+            exit()
 
         case "Add":
             todos = functions.get_todos("todos.txt")
@@ -71,7 +71,7 @@ while True:
             window['to-dos'].update(values=todos)
             window['to-do'].update(value="")
         case "Exit":
-            break
+            exit()
         case "to-dos":
             window["to-do"].update(value=values['to-dos'][0])
 
