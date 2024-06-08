@@ -1,4 +1,4 @@
-import zipvault
+import zipfile
 
 
 def extract_archive(filepath, folder):
