@@ -1,6 +1,6 @@
 import functions
 
-import FreeSimpleGUI as slim_shady
+import PySimpleGUI as slim_shady
 
 import time
 
@@ -31,9 +31,17 @@ layout = [[clock], [label], [input_box, add_button], [list_box, edit_button, com
 window = slim_shady.Window("To-DoWave", layout=layout,
                            font=("Helvetica", 18))
 while True:
-    event, values = window.read(timeout=10)
-    window["clock"].update(value=time.strftime("%b %d, %Y %H:%M:%S"))
+    event, values = window.read(timeout=100)
+    if not window.was_closed():
+        window["clock"].update(value=time.strftime("%b %d, %Y %H:%M:%S"))
+    else:
+        break
+
     match event:
+
+        case slim_shady.WIN_CLOSED:
+            break
+
         case "Add":
             todos = functions.get_todos("todos.txt")
             new_todo = values["to-do"] + "\n"
@@ -66,6 +74,5 @@ while True:
             break
         case "to-dos":
             window["to-do"].update(value=values['to-dos'][0])
-        case slim_shady.WIN_CLOSED:
-            break
+
 window.close()

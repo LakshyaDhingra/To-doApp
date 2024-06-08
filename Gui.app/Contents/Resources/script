@@ -1,6 +1,6 @@
 import functions
 
-import FreeSimpleGUI as slim_shady
+import PySimpleGUI as slim_shady
 
 import time
 
@@ -33,6 +33,7 @@ window = slim_shady.Window("To-DoWave", layout=layout,
 while True:
     event, values = window.read(timeout=10)
     window["clock"].update(value=time.strftime("%b %d, %Y %H:%M:%S"))
+
     match event:
         case "Add":
             todos = functions.get_todos("todos.txt")
