@@ -14,7 +14,7 @@ label2 = fein.Text("Select destination folder:")
 input2 = fein.Input(key="input2")
 choose_button2 = fein.FolderBrowse("Choose Destination", key="folder")
 
-zip_name_label = fein.Text("Enter zip name:")
+zip_name_label = fein.Text("Enter zipfile name:")
 input_zip_name = fein.Input(key="input_zip")
 
 label3 = fein.Text("Select archive: ")
