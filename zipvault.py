@@ -31,7 +31,7 @@ output_label = fein.Text(key="output")
 extract_button = fein.Button("Extract")
 output_label2 = fein.Text(key="output2")
 
-window = fein.Window("File Compressor", layout=([label1, input1, choose_button1],
+window = fein.Window("File Compressor & Extractor", layout=([label1, input1, choose_button1],
                                                 [label2, input2, choose_button2],
                                                 [zip_name_label, input_zip_name],
                                                 [compress_button, output_label],

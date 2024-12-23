@@ -66,12 +66,12 @@ while True:
             todos = functions.get_todos("todos.txt")
 
             todo_to_complete = values["to-dos"][0]
-            todos.remove(todo_to_complete)
+            todos.remove(todo_to_complete).
             functions.writelines_todos("todos.txt", todos)
             window['to-dos'].update(values=todos)
             window['to-do'].update(value="")
         case "Exit":
-            exit()
+            exit("Thank you!")
         case "to-dos":
             window["to-do"].update(value=values['to-dos'][0])
 
