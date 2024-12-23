@@ -14,7 +14,7 @@ choose_button2 = fein.FolderBrowse("Choose Destination", key="folder")
 extract_button = fein.Button("Extract")
 output_label = fein.Text(key="output")
 
-window = fein.Window("File Compressor", layout=([label, input1, choose_button1],
+window = fein.Window("File Extractor", layout=([label, input1, choose_button1],
                                                   [label2, input2, choose_button2],
                                                   [extract_button, output_label]))
 while True:
