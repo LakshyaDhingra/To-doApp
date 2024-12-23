@@ -71,7 +71,7 @@ while True:
             window['to-dos'].update(values=todos)
             window['to-do'].update(value="")
         case "Exit":
-            exit("Thank you!")
+            exit()
         case "to-dos":
             window["to-do"].update(value=values['to-dos'][0])
 
